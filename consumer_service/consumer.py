@@ -28,7 +28,7 @@ dynamodb = boto3.resource(
     region_name=os.getenv("AWS_REGION", "ap-south-1"),  # Change if needed
 )
 
-TABLE_NAME = os.getenv("DDB_TABLE_NAME", "RandomNumbers")
+TABLE_NAME = os.getenv("DDB_TABLE_NAME", "kafka_messages")
 table = dynamodb.Table(TABLE_NAME)
 
 def save_to_dynamodb(number):
