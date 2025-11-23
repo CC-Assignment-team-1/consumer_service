@@ -2,6 +2,7 @@ import os
 import sys
 import uuid
 from datetime import datetime
+from decimal import Decimal
 from confluent_kafka import Consumer, KafkaException
 import boto3
 
@@ -35,7 +36,7 @@ def save_to_dynamodb(number):
     """Insert a record into DynamoDB"""
     item = {
         "id": str(uuid.uuid4()),
-        "random_number": float(number),
+        "random_number": Decimal(str(number)),
         "timestamp": datetime.utcnow().isoformat()
     }
     table.put_item(Item=item)
