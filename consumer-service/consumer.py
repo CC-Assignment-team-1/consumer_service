@@ -44,7 +44,7 @@ def save_to_dynamodb(number):
 
 def consume_numbers():
     """Consume messages from Kafka and write to DynamoDB"""
-    consumer.subscribe(['topic1'])
+    consumer.subscribe(['topic2'])
     print("Listening for messages on 'topic1'...")
 
     try:
