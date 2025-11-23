@@ -35,7 +35,7 @@ def save_to_dynamodb(number):
     """Insert a record into DynamoDB"""
     item = {
         "id": str(uuid.uuid4()),
-        "random_number": int(number),
+        "random_number": float(number),
         "timestamp": datetime.utcnow().isoformat()
     }
     table.put_item(Item=item)
